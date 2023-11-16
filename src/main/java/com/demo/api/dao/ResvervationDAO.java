@@ -4,6 +4,7 @@ import com.demo.api.model.Reservation;
 import com.demo.api.model.Spectacle;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ResvervationDAO {
 
@@ -69,5 +70,14 @@ public class ResvervationDAO {
 
         reservation.setConfirme(true);
         return true;
+    }
+
+    public List<Reservation> getReservationsConfirmees(Integer id) {
+        List<Reservation> result = new ArrayList<>();
+        for(Reservation resa : reservations){
+            if(resa.getId().equals(id) && resa.isConfirme())
+                result.add(resa);
+        }
+        return result;
     }
 }

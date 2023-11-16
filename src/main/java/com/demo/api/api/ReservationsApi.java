@@ -42,7 +42,7 @@ public class ReservationsApi {
         if (ok)
             return Response.ok().build();
         else
-            return Response.status(Response.Status.NOT_FOUND).build();
+            return Response.status(Response.Status.FORBIDDEN).build();
     }
 
     @PUT
@@ -58,4 +58,5 @@ public class ReservationsApi {
         else
             return Response.status(Response.Status.FORBIDDEN).build();
     }
+
 }
